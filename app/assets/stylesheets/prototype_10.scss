@@ -53,16 +53,14 @@
   .drum, .melody {
     border-radius: 60px;
     color: white;
-    border: 4px soli linear-gradient(99.59deg, #0D306F 14.55%, #051636 57.23%),
-    linear-gradient(0deg, #191921, #191921);
-    ;
+    border: 4px solid #151526;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 32px 24px;
     width: 100%;
-    box-shadow: 0px 0px 10px 6px #0C1E3E;
+    box-shadow: 0px 0px 16px 6px rgba(12, 30, 62, 0.7);
     background: #101016;
   }
   .SC_Button {

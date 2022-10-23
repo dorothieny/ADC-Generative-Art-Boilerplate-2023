@@ -13,7 +13,7 @@
               releaseCurve: 'exponential'
             },
             oscillator: {
-              type: 'sawtooth',
+              type: 'sine',
               modulationType: 'triangle',
               // partialCount: 0,
               // partials: [],
