@@ -36,5 +36,12 @@ export const handleValueChange = (property, value, state, setState, settings) =>
       jcReverb.roomSize.value = value;
       stating.jcReverb.roomSize = value;
     }
+    else if(property === "envelopeAtack") {
+      synth.envelope.attack = value;
+      stating.synth.envelope.attack = value;
+    } else if( property === "envelopeAttackCurve") {
+      synth.envelope.attackCurve = value;
+      stating.synth.envelope.attackCurve = value;
+    }
    setState({...stating})
   }

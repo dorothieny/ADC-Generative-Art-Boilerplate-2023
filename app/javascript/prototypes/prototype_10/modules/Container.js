@@ -88,7 +88,7 @@ const Container = () =>  {
           name="Delay Wet"
           min={0}
           max={1}
-          step={0.01}
+          step={0.1}
           value={state.pingPongDelay.wet}
           property="pingPongDelayWet"
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}

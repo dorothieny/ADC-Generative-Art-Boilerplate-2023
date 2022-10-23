@@ -52,6 +52,13 @@ const autoFilter = new Tone.AutoFilter("5n");
     'amtriangle',
     'pulse',
     'pwm']
+    const envelopeOptions = [ 'linear',
+    'exponential',
+    'sine',
+    'cosine',
+    'bounce',
+    'ripple',
+    'step']
     const channelMute = ['Mute', 'Sound']
     return (
       <div className="Container">
@@ -100,6 +107,22 @@ const autoFilter = new Tone.AutoFilter("5n");
           property="roomSize"
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth1, chorus: chorus1, pingPongDelay: pingPongDelay1, channel: channel1, jcReverb: jcReverb})}
         />
+          <SC_Slider
+          name="Envelope attack"
+          min={0}
+          max={1}
+          step={0.01}
+          value={state.synth.envelope.attack}
+          property="envelopeAtack"
+          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth1, chorus: chorus1, pingPongDelay: pingPongDelay1, channel: channel1})}
+        />
+        <SC_ToggleButtonSet
+          name="Envelope attack type"
+          options={envelopeOptions}
+          value={state.synth.envelope.attackCurve}
+          property="envelopeAttackCurve"
+          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth1, chorus: chorus1, pingPongDelay: pingPongDelay1, channel: channel1})}
+        />
         </div>
         <div className='flex-column'>
         <div className='divider'/>
@@ -111,15 +134,6 @@ const autoFilter = new Tone.AutoFilter("5n");
           value={state.synth.volume}
           property="synthVolume"
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth1, chorus: chorus1, pingPongDelay: pingPongDelay1, channel: channel1})}
-        />
-        
-         <SC_Slider
-          name="Channel hear"
-          min={-1}
-          max={1}
-          step={0.1}
-          value={state.channel.pan}
-          property="channelPan"
         />
         
         <SC_Knob 
