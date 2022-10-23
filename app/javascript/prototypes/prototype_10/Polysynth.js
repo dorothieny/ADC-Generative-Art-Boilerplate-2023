@@ -9,7 +9,7 @@ import Sampler_3 from "./modules/Sampler_3";
 const Polysynth = () => {
         return (
             <div className={"synth_main"}>
-                 <div className="melodies">
+                
                     <div className="melody">
                         <Container />
                     </div>
@@ -20,8 +20,8 @@ const Polysynth = () => {
                         <Container_1 />
                     </div>
                     
-                </div>
-                <div className="drums">
+              
+                
                     <div className="drum">
                         <Sampler />
                     </div>
@@ -31,7 +31,7 @@ const Polysynth = () => {
                     <div className="drum">
                         <Sampler_2 />
                     </div>
-                </div>
+               
                
            
             </div>

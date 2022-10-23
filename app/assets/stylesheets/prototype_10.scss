@@ -27,12 +27,18 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap:16px
+    justify-content: space-between;
+    height: 100%;
+   .flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+   }
   }
   .synth_main {
     width: 100vw;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 24px;
     gap:24px;
   }
@@ -66,6 +72,7 @@
       // margin-bottom: 20px;
       height: 40px;
       width: 60px;
+      padding-left: 4px;
 
 
       color: white;
@@ -73,8 +80,11 @@
       text-align: center;
       background: #312A2F;
       border: 4px solid #38FBDB;
-      box-shadow: 0px 0px 8px 1px #38FBDB, inset 3px 3px 1px #191921;
+      box-shadow: 0px 0px 24px 5px rgba(56, 251, 219, 0.3), inset 3px 3px 1px #191921;
       border-radius: 60px;
+      &:hover {
+        box-shadow: 0px 0px 24px 5px rgba(56, 251, 219, 0.8), inset 3px 3px 1px #191921;
+      }
     }
     .SC_Knob {
       display: flex;
@@ -280,15 +290,17 @@
     }
  .set-flex {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  justify-content:space-between;
+  flex-wrap: wrap;
+  justify-content:center;
   gap: 8px;
   cursor: pointer;
   // max-width: 350px;
  }
     .SC_ToggleButton {
-      width: 100%;
-      padding: 16px 8px;
+      min-width: 120px;
+      padding: 16px 16px;
       background: linear-gradient(132.95deg, #35373F 21.77%, #17181E 66.15%);
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.65);
       border-radius: 60px;
@@ -299,7 +311,7 @@
 
       &:hover:not(.active) {
         background: linear-gradient(132.95deg, #35373F 21.77%, #17181E 66.15%);
-        box-shadow: 0px 0px 8px #DBFF00;
+        box-shadow: 0px 0px 14px 5px  rgba(219, 255, 0, 0.4);
         cursor: pointer;
       }
 
@@ -307,8 +319,10 @@
         font-weight: 800;
         color: black;
         background: linear-gradient(135deg, #DBFF00 16.41%, #89CA00 83.59%);
-        box-shadow: 0px 0px 8px #DBFF00;
-        border-radius: 60px;
+        /* Lime_blur */
+        
+        box-shadow: 0px 0px 24px 10px rgba(219, 255, 0, 0.2);
+    
         cursor: default;
       }
     }
@@ -317,7 +331,7 @@
 background: #35373F;
 border-radius: 64px;
 width: 100%;
-margin-top: 16px;
+margin-top: 40px;
 }
     .SC_Slider {
       display: flex;
@@ -345,15 +359,13 @@ margin-top: 16px;
 
         &::-webkit-slider-thumb {
           -webkit-appearance: none;
-          height: 32px;
+            height: 32px;
           width: 32px;
           border-radius: 50%;
           background: linear-gradient(141.91deg, #272B37 32.32%, #17181E 84.64%);
-          box-shadow: 0px 0px 8px #8E52F5;
+          box-shadow: 0px 0px 16px 8px rgba(142, 82, 245, 0.3);
           margin-top: -12px;
           border: 3px solid #B287FD;
-
-
           cursor: pointer;
         }
 
@@ -361,7 +373,14 @@ margin-top: 16px;
           outline: none;
 
           &::-webkit-slider-runnable-track {
-            background: var(black);
+            background: rgba(142, 82, 245, 0.5);
+          }
+        }
+        &:hover {
+          box-shadow: 0px 0px 16px 8px rgba(142, 82, 245, 0.5);
+
+          &::-webkit-slider-runnable-track {
+            background: rgba(142, 82, 245, 0.5);
           }
         }
       }

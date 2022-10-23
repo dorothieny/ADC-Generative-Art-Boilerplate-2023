@@ -52,11 +52,22 @@ const Container = () =>  {
     Tone.Transport.start()
 
   }
-    const options = ['sine', 'square', 'sawtooth', 'triangle']
+    const options = ['square', 'sawtooth', 'fatsine',
+    'fatsquare',
+    'fatsawtooth',
+    'fattriangle',
+    'fmsine',
+    'fmsquare',
+    'fmsawtooth',
+    'fmtriangle',
+    'amtriangle',
+    'pulse',
+    'pwm']
     const channelMute = ['Mute', 'Sound']
   const distOptions = [0.5, 1, 2]
     return (
       <div className="Container">
+      <div className='flex-column'>
       <div  className='title-row'>  
           <h1 className='title'>Hell</h1>
           <SC_Button
@@ -100,32 +111,35 @@ const Container = () =>  {
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel, distortion: distortion})}
         />
 
+      </div>
+        <div className='flex-column'>
         <div className='divider'/>
     
-         <SC_Slider
-          name="Volume"
-          min={-40}
-          max={50}
-          step={10}
-          value={state.synth.volume}
-          property="synthVolume"
-          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
-        />
-         <SC_Knob 
-          name="Ears"
-          min={-1}
-          max={1}
-          value={state.channel.pan}
-          property="channelPan"
-          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
-          />
-          <SC_ToggleButtonSet
-          name=""
-          options={channelMute}
-          value={state.channel.mute}
-          property="channelMute"
-          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
-        />
+    <SC_Slider
+     name="Volume"
+     min={-40}
+     max={50}
+     step={10}
+     value={state.synth.volume}
+     property="synthVolume"
+     handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
+   />
+    <SC_Knob 
+     name="Ears"
+     min={-1}
+     max={1}
+     value={state.channel.pan}
+     property="channelPan"
+     handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
+     />
+     <SC_ToggleButtonSet
+     name=""
+     options={channelMute}
+     value={state.channel.mute}
+     property="channelMute"
+     handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth, chorus: chorus, pingPongDelay: pingPongDelay, channel: channel})}
+   />
+        </div>
          
       </div>
     )

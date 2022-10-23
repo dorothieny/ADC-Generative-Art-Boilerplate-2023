@@ -27,7 +27,7 @@ const sequenceDrums = {
 
 const drumsSettinds = {
     channel: {
-        volume: 0, 
+        volume: 20, 
         pan: 1, 
         mute: false, 
         solo: false

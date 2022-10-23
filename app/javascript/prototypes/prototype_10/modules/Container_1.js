@@ -45,10 +45,17 @@ const autoFilter = new Tone.AutoFilter("5n");
     Tone.Transport.start()
   }
 
-    const options = ['sine', 'square', 'sawtooth', 'triangle']
+    const options = ['sine','triangle',,
+    'amsine',
+    'amsquare',
+    'amsawtooth',
+    'amtriangle',
+    'pulse',
+    'pwm']
     const channelMute = ['Mute', 'Sound']
     return (
       <div className="Container">
+        <div className='flex-column'>
         <div  className='title-row'>  
           <h1 className='title'>Heaven</h1>
           <SC_Button
@@ -93,17 +100,9 @@ const autoFilter = new Tone.AutoFilter("5n");
           property="roomSize"
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: synth1, chorus: chorus1, pingPongDelay: pingPongDelay1, channel: channel1, jcReverb: jcReverb})}
         />
+        </div>
+        <div className='flex-column'>
         <div className='divider'/>
-
-         {/* <SC_Slider
-          name="Channel Volume"
-          min={0}
-          max={100}
-          step={10}
-          value={state.channel.volume}
-          property="channelVolume"
-          handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = {synth: synth1, pingPongDelay: pingPongDelay1, chorus: chorus1, channel: channel1})}
-        /> */}
         <SC_Slider
           name="Volume"
           min={-40}
@@ -139,6 +138,7 @@ const autoFilter = new Tone.AutoFilter("5n");
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = {synth: synth1, pingPongDelay: pingPongDelay1, chorus: chorus1, channel: channel1})}
         />
 
+        </div>
       </div>
     )
   }

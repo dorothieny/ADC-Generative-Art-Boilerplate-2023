@@ -28,7 +28,8 @@ const handleStart = () => {
 const channelMute = ['Mute', 'Sound']
     return (
         <div className="Container">
-            <div className="title-row" style={{flexDirection: "column", alignItems: 'center'}} >
+           <div className="flex-column">
+           <div className="title-row" style={{flexDirection: "column", alignItems: 'center'}} >
                 <h1 className="title" style={{textAlign: "center"}}>
                     Molitva
                 </h1>
@@ -37,6 +38,9 @@ const channelMute = ['Mute', 'Sound']
              />
              <Christ/>
             </div>
+           </div>
+           <div className="flex-column">
+           <div className="divider"/>
         <SC_Slider
           name="Volume"
           min={0}
@@ -53,6 +57,7 @@ const channelMute = ['Mute', 'Sound']
           property="channelMute"
           handleChange={(property, value) => handleValueChange(property, value, state, setState, settings = { synth: {}, chorus:{}, pingPongDelay:{}, channel: playerChannel})}
         />
+           </div>
          
         </div>
         
